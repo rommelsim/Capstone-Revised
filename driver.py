@@ -59,7 +59,13 @@ class RendererClass:
         self.root.resizable(False, False)
         self.root.configure(bg="#0C0C0C")
 
-        self.title_label = Label(self.root, text="RAZER AI INFERENCER", fg="#44FF44", bg="#0C0C0C", font=("Arial", 20, "bold"))
+         # Change icon
+        try:
+            self.root.iconbitmap("razer.ico")  # Ensure you have an 'icon.ico' file
+        except:
+            print("Icon not found, skipping...")
+
+        self.title_label = Label(self.root, text="RAZER AI TOOL", fg="#44FF44", bg="#0C0C0C", font=("Arial", 20, "bold"))
         self.title_label.pack(pady=10)
         
         self.frame = Frame(self.root, bg="#0C0C0C")

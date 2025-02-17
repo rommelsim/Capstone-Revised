@@ -28,6 +28,14 @@ epochs = 100
 dataset_path = r"images/"
 data_dir = pathlib.Path(dataset_path)
 
+# Data augmentation
+data_augmentation = tf.keras.Sequential([
+    layers.RandomFlip("horizontal"),
+    layers.RandomRotation(0.2),
+    layers.RandomZoom(0.2),
+    layers.RandomTranslation(0.2, 0.2)
+])
+
 train_ds = tf.keras.preprocessing.image_dataset_from_directory(
     data_dir,
     validation_split=0.3,
@@ -47,10 +55,11 @@ val_ds = tf.keras.preprocessing.image_dataset_from_directory(
     label_mode="binary"
 )
 
-
-
 class_names = train_ds.class_names
 print(f"Classes found: {class_names}")
+
+# Apply data augmentation only to training dataset
+train_ds = train_ds.map(lambda x, y: (data_augmentation(x, training=True), y))
 
 # CNN Processes:
 # 1) Conv2D(): Convolutional Layer. Outputs a feature map. 
