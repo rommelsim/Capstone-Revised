@@ -52,35 +52,34 @@ class InferencerClass:
 
 class RendererClass:
     def __init__(self, inferencer):
-        self.inferencer = inferencer        # Link InferencerClass
-
+        self.inferencer = inferencer
         self.root = Tk()
         self.root.title("Inferencer")
-        self.root.geometry("600x600")
+        self.root.geometry("600x700")
         self.root.resizable(False, False)
+        self.root.configure(bg="#0C0C0C")
 
-        self.frame = ttk.Frame(self.root, padding=10)
-        self.frame.pack(fill="both", expand=True)
+        self.title_label = Label(self.root, text="RAZER AI INFERENCER", fg="#44FF44", bg="#0C0C0C", font=("Arial", 20, "bold"))
+        self.title_label.pack(pady=10)
+        
+        self.frame = Frame(self.root, bg="#0C0C0C")
+        self.frame.pack(fill="both", expand=True, pady=10)
 
-        # Button Frame to encapsulate the loadImageBtn and QuitBtn together
-        self.button_frame = ttk.Frame(self.frame)
-        self.button_frame.pack(fill="x", pady=10)
+        self.load_img_btn = Button(self.frame, text="Load Image", command=self.open_img, fg="#0C0C0C", bg="#44FF44", 
+                                   font=("Arial", 12, "bold"), relief=FLAT, width=15, height=2, activebackground="#66FF66")
+        self.load_img_btn.pack(pady=10)
 
-        self.load_img_btn = ttk.Button(self.button_frame, text="Load Image", command=self.open_img)
-        self.load_img_btn.pack(side="left", expand=True, fill="x", padx=5)
-
-        self.quit_btn = ttk.Button(self.button_frame, text="Quit", command=self.root.destroy)
-        self.quit_btn.pack(side="left", expand=True, fill="x", padx=5)
-
-        # Center image on window
-        self.image_label = ttk.Label(self.frame)
+        self.image_label = Label(self.frame, bg="#0C0C0C")
         self.image_label.pack(pady=5)
-
-        self.result_label = ttk.Label(self.frame, text="", anchor="center", font=("Arial", 14))
+        
+        self.result_label = Label(self.frame, text="", fg="#44FF44", bg="#0C0C0C", font=("Arial", 14, "bold"))
         self.result_label.pack(pady=10)
+        
+        self.quit_btn = Button(self.frame, text="Quit", command=self.root.destroy, fg="#0C0C0C", bg="#44FF44", 
+                               font=("Arial", 12, "bold"), relief=FLAT, width=15, height=2, activebackground="#66FF66")
+        self.quit_btn.pack(pady=10)
 
         self.img_tk = None
-
         self.root.mainloop()
 
     def openfn(self):
