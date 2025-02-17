@@ -101,7 +101,7 @@ class RendererClass:
 
 class System:
     def __init__(self):
-        self.inferencer = InferencerClass('model.h5')
+        self.inferencer = InferencerClass('vgg16_model.h5')
         self.render = RendererClass(self.inferencer)
         
 
