@@ -76,7 +76,7 @@ class RendererClass:
         self.image_label = ttk.Label(self.frame)
         self.image_label.pack(pady=5)
 
-        self.result_label = ttk.Label(self.frame, text="Result: ", anchor="center", font=("Arial", 14))
+        self.result_label = ttk.Label(self.frame, text="", anchor="center", font=("Arial", 14))
         self.result_label.pack(pady=10)
 
         self.img_tk = None
@@ -97,7 +97,7 @@ class RendererClass:
         # Run inference upon loaded image
         pred_class, confidence = self.inferencer.predict(img_path)
         color = "red" if pred_class == "faulty" else "green"
-        self.result_label.config(text=f"Result: {pred_class}", foreground=color)
+        self.result_label.config(text=f"Result: {pred_class} {confidence * 100:.2f}%" , foreground=color)
 
 class System:
     def __init__(self):
