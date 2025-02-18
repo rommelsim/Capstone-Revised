@@ -6,7 +6,8 @@ Library      inferencer_lib.py
 Library      BlackWidow.py
 
 *** Variables ***
-${BATCH_SCRIPT}    video.bat
+${BATCH_SCRIPT}      video.bat
+${IMAGE_PATH}        C:\Users\Kira10\Pictures\Saved Pictures\photos
 
 *** Keywords ***
 Set BlackWidow V4 Keyboard Chroma 
@@ -20,10 +21,14 @@ Take Pictures Using Webcam
     Run Process    ${BATCH_SCRIPT}
     Sleep    8s
 
+Run AI
+    [Documentation]    Perform inference
+    ${result}    ${confidence}    Predict Image    ${IMAGE_PATH}    
+
 *** Test Cases ***
 Test Image Classification
     [Documentation]    Test image if classified correctly    
     Set BlackWidow V4 Keyboard Chroma
     Check If Chroma Status Is Complete
     Take Pictures Using Webcam
-    
+    Run AI
