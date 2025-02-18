@@ -1,0 +1,6 @@
+selenium
+robotframework
+tensorflow
+numpy
+tk
+robotframework-seleniumlibrary
