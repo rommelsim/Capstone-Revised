@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.0 on win32)" generated="20250218 10:27:46.994" rpa="false" schemaversion="3">
+<suite id="s1" name="Inferencer" source="c:\Users\Kira10\Documents\GitHub\Capstone-Revised\Robot\inferencer.robot">
+<test id="s1-t1" name="Test Image Classification" line="20">
+<kw name="Set BlackWidow V4 Keyboard Chroma">
+<kw name="Perform Chroma Test BlackWidow V4">
+<msg timestamp="20250218 10:27:49.418" level="FAIL">No keyword with name 'Perform Chroma Test BlackWidow V4' found.</msg>
+<status status="FAIL" starttime="20250218 10:27:49.418" endtime="20250218 10:27:49.418"/>
+</kw>
+<status status="FAIL" starttime="20250218 10:27:49.418" endtime="20250218 10:27:49.418"/>
+</kw>
+<kw name="Check If Chroma Status Is Complete">
+<status status="NOT RUN" starttime="20250218 10:27:49.418" endtime="20250218 10:27:49.418"/>
+</kw>
+<doc>Test image if classified correctly</doc>
+<status status="FAIL" starttime="20250218 10:27:49.417" endtime="20250218 10:27:49.418">No keyword with name 'Perform Chroma Test BlackWidow V4' found.</status>
+</test>
+<status status="FAIL" starttime="20250218 10:27:46.996" endtime="20250218 10:27:49.423"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Inferencer">Inferencer</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20250218 10:27:49.334" level="WARN">Imported library 'c:\Users\Kira10\Documents\GitHub\Capstone-Revised\Robot\inferencer_lib.py' contains no keywords.</msg>
+<msg timestamp="20250218 10:27:49.412" level="ERROR">Error in file 'c:\Users\Kira10\Documents\GitHub\Capstone-Revised\Robot\inferencer.robot' on line 6: Importing library 'c:\Users\Kira10\Documents\GitHub\Capstone-Revised\Robot\BlackWidow.py' failed: ImportError: cannot import name 'SynapseWebDriverClass' from 'driver' (C:\Users\Kira10\Documents\GitHub\Capstone-Revised\driver.py)
+Traceback (most recent call last):
+  File "c:\Users\Kira10\Documents\GitHub\Capstone-Revised\Robot\BlackWidow.py", line 1, in &lt;module&gt;
+    from driver import SynapseWebDriverClass
+PYTHONPATH:
+  c:\Users\Kira10\Documents\GitHub\Capstone-Revised\Robot
+  c:\Users\Kira10\.vscode\extensions\robocorp.robotframework-lsp-1.13.0\src\robotframework_debug_adapter
+  C:\Users\Kira10\Documents\GitHub\Capstone-Revised
+  c:\Users\Kira10\.vscode\extensions\robocorp.robotframework-lsp-1.13.0\src
+  c:\Users\Kira10\.vscode\extensions\robocorp.robotframework-lsp-1.13.0\src\robotframework_ls\vendored
+  C:\Users\Kira10\AppData\Local\Programs\Python\Python311\python311.zip
+  C:\Users\Kira10\AppData\Local\Programs\Python\Python311\Lib
+  C:\Users\Kira10\AppData\Local\Programs\Python\Python311\DLLs
+  C:\Users\Kira10\AppData\Roaming\Python\Python311\site-packages
+  C:\Users\Kira10\AppData\Local\Programs\Python\Python311
+  C:\Users\Kira10\AppData\Local\Programs\Python\Python311\Lib\site-packages
+  C:\Users\Kira10\AppData\Local\Programs\Python\Python311\Lib\site-packages\win32
+  C:\Users\Kira10\AppData\Local\Programs\Python\Python311\Lib\site-packages\win32\lib
+  C:\Users\Kira10\AppData\Local\Programs\Python\Python311\Lib\site-packages\Pythonwin</msg>
+</errors>
+</robot>

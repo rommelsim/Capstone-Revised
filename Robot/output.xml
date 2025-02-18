@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.0 on win32)" generated="20250218 10:34:45.404" rpa="false" schemaversion="3">
+<suite id="s1" name="Inferencer" source="c:\Users\Kira10\Documents\GitHub\Capstone-Revised\Robot\inferencer.robot">
+<test id="s1-t1" name="Test Image Classification" line="20">
+<kw name="Set BlackWidow V4 Keyboard Chroma">
+<kw name="Perform Chroma Test BlackWidow V4" library="BlackWidow">
+<msg timestamp="20250218 10:34:49.757" level="INFO">SYNAPSE ATTACHED: PASS</msg>
+<status status="PASS" starttime="20250218 10:34:47.793" endtime="20250218 10:34:49.758"/>
+</kw>
+<status status="PASS" starttime="20250218 10:34:47.793" endtime="20250218 10:34:49.758"/>
+</kw>
+<kw name="Check If Chroma Status Is Complete">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Check Status</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Check Status" library="BlackWidow">
+<status status="PASS" starttime="20250218 10:34:49.758" endtime="20250218 10:34:49.758"/>
+</kw>
+<msg timestamp="20250218 10:34:49.758" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20250218 10:34:49.758" endtime="20250218 10:34:49.758"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${status}</arg>
+<arg>msg=Chroma Setup Incomplete.</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20250218 10:34:49.758" endtime="20250218 10:34:49.758"/>
+</kw>
+<status status="PASS" starttime="20250218 10:34:49.758" endtime="20250218 10:34:49.758"/>
+</kw>
+<doc>Test image if classified correctly</doc>
+<status status="PASS" starttime="20250218 10:34:47.729" endtime="20250218 10:34:49.761"/>
+</test>
+<status status="PASS" starttime="20250218 10:34:45.406" endtime="20250218 10:34:49.761"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Inferencer">Inferencer</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20250218 10:34:47.727" level="WARN">Imported library 'c:\Users\Kira10\Documents\GitHub\Capstone-Revised\Robot\inferencer_lib.py' contains no keywords.</msg>
+</errors>
+</robot>
