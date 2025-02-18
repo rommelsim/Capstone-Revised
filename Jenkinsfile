@@ -37,7 +37,7 @@ pipeline{
                 script{
                     bat """
                         call venv\\Scripts\\activate
-                        robot --outputdir results Robot\inferencer.robot
+                        robot --outputdir results Robot/inferencer.robot
                     """
                 }
             }
