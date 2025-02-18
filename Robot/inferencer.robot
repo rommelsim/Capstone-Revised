@@ -22,8 +22,9 @@ Take Pictures Using Webcam
     Sleep    5s
 
 Predict From Directory
-    Predict Directory
-
+    ${result}=    Predict Directory
+    Should Be Equal    ${result}    PASS
+    
 *** Test Cases ***
 Test Image Classification
     [Documentation]    Test image if classified correctly    

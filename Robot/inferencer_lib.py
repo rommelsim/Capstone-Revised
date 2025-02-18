@@ -3,6 +3,7 @@ import tensorflow as tf
 import numpy as np
 from robot.api.deco import keyword
 import os
+from robot.api import logger  # Import Robot Framework logger
 
 # class InferencerLibrary:
 #     def __init__(self, model_path="vgg16_model.h5"):
@@ -64,6 +65,7 @@ def Predict(model, img):
         confidence = prediction if prediction > 0.5 else 1 - prediction
         # print(f"Raw Prediction: {prediction}")
         print(f"{prediction_class}--->{confidence * 100:.2f}%")
+        return prediction_class
 
     except Exception as e:
         print(f"Error loading model: {e}")
@@ -76,9 +78,15 @@ def PredictDirectory(model_path = MODEL, directory = DIRECTORY):
         for files in os.listdir(os.path.join(directory)):
             img_path = os.path.join(directory, files)
             print(f"Reading Image:{img_path}")
-            Predict(model, img_path)
+            result = Predict(model, img_path)
+            if result == "faulty":
+                logger.error(f"Test Failed: {img_path} is faulty.")
+                return "FAIL"
+        logger.info("All Images passed.")
+        return "PASS"
     except Exception as e:
         print(f"Error loading model or directory: {e}")
+        return "FAIL"
 
        
     
