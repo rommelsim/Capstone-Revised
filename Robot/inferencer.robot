@@ -24,10 +24,10 @@ Take Pictures Using Webcam
 Predict From Directory
     ${result}=    Predict Directory
     Should Be Equal    ${result}    PASS
-    
+
 *** Test Cases ***
 Test Image Classification
-    [Documentation]    Test image if classified correctly    
+    [Documentation]    Use Deep Neural Network to check for keyboard defects   
     Set BlackWidow V4 Keyboard Chroma
     Check If Chroma Status Is Complete
     Take Pictures Using Webcam
