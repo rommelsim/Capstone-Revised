@@ -7,7 +7,6 @@ Library      BlackWidow.py
 
 *** Variables ***
 ${BATCH_SCRIPT}      video.bat
-${IMAGE_PATH}        C:\Users\Kira10\Pictures\Saved Pictures\photos
 
 *** Keywords ***
 Set BlackWidow V4 Keyboard Chroma 
