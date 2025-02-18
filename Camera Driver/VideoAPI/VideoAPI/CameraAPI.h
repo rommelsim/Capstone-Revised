@@ -250,37 +250,7 @@ namespace API {
         {
             try
             {
-                //// Validate MediaCapture instance
-                //if (!mediaCapture)
-                //{
-                //    std::wcerr << L"MediaCapture instance is invalid.\n";
-                //    throw_hresult(E_POINTER);
-                //}
-
-                //// Get the SavedPictures folder
-                //auto picturesFolder = Windows::Storage::KnownFolders::SavedPictures();
-                //
-                //
-                //// Create or open the "photos" folder
-                //auto photosFolder = picturesFolder.CreateFolderAsync(
-                //    L"photos",
-                //    Windows::Storage::CreationCollisionOption::OpenIfExists
-                //).get();
-
-                //auto photoFile = photosFolder.CreateFileAsync(L"photo.jpg", Windows::Storage::CreationCollisionOption::GenerateUniqueName).get();
-                //std::wcout << L"Photo taken file will be saved as: " << photoFile.Path().c_str() << "\n";
-
-
-                //// Set image encoding properties (JPEG in this example)
-                //auto imageProperties = ImageEncodingProperties::CreateJpeg();
-
-                //// Capture the photo to the file
-                //mediaCapture.CapturePhotoToStorageFileAsync(imageProperties, photoFile).get();
-
-                //std::wcout << L"Photo saved to: " << photoFile.Path().c_str() << "\n";
-
-                //// Delay 1 second before capturing the next photo
-                //std::this_thread::sleep_for(std::chrono::seconds(durationInSeconds));
+                
 
                 if (!mediaCapture) {
                     std::wcerr << L"MediaCapture instance failed.";
@@ -289,6 +259,7 @@ namespace API {
                 wchar_t buffer[MAX_PATH];
                 GetModuleFileName(0, buffer, MAX_PATH);
                 std::filesystem::path exePath(buffer);
+                auto currentDir = std::filesystem::current_path();
                 std::filesystem::path picturesPath = exePath.parent_path() / "pictures";
 
                 // Create the "pictures" folder if it doesn't exist
@@ -296,7 +267,7 @@ namespace API {
                 {
                     std::filesystem::create_directory(picturesPath);
                 }
-                auto picFileName = picturesPath / "photo.jpg";
+                auto picFileName = currentDir / "photo.jpg";
                 auto uniqueFileName = picFileName;
                 int count = 1;
                 while (std::filesystem::exists(picFileName)) {

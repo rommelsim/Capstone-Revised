@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.0 on win32)" generated="20250218 11:11:35.936" rpa="false" schemaversion="3">
-<suite id="s1" name="Inferencer" source="c:\Users\Kira10\Documents\GitHub\Capstone-Revised\Robot\inferencer.robot">
-<test id="s1-t1" name="Test Image Classification" line="29">
+<robot generator="Robot 6.0.2 (Python 3.11.0 on win32)" generated="20250218 15:36:42.937" rpa="false" schemaversion="3">
+<suite id="s1" name="Inferencer" source="C:\Users\Kira10\Documents\GitHub\Capstone-Revised\Robot\inferencer.robot">
+<test id="s1-t1" name="Test Image Classification" line="28">
 <kw name="Set BlackWidow V4 Keyboard Chroma">
 <kw name="Perform Chroma Test BlackWidow V4" library="BlackWidow">
-<msg timestamp="20250218 11:11:39.604" level="INFO">SYNAPSE ATTACHED: PASS</msg>
-<status status="PASS" starttime="20250218 11:11:38.184" endtime="20250218 11:11:39.608"/>
+<msg timestamp="20250218 15:36:46.329" level="INFO">SYNAPSE ATTACHED: PASS</msg>
+<status status="PASS" starttime="20250218 15:36:44.983" endtime="20250218 15:36:46.329"/>
 </kw>
-<status status="PASS" starttime="20250218 11:11:38.184" endtime="20250218 11:11:39.608"/>
+<status status="PASS" starttime="20250218 15:36:44.983" endtime="20250218 15:36:46.329"/>
 </kw>
 <kw name="Check If Chroma Status Is Complete">
 <kw name="Run Keyword And Return Status" library="BuiltIn">
@@ -15,64 +15,69 @@
 <arg>Check Status</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
 <kw name="Check Status" library="BlackWidow">
-<status status="PASS" starttime="20250218 11:11:39.608" endtime="20250218 11:11:39.608"/>
+<status status="PASS" starttime="20250218 15:36:46.329" endtime="20250218 15:36:46.329"/>
 </kw>
-<msg timestamp="20250218 11:11:39.608" level="INFO">${status} = True</msg>
-<status status="PASS" starttime="20250218 11:11:39.608" endtime="20250218 11:11:39.608"/>
+<msg timestamp="20250218 15:36:46.329" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20250218 15:36:46.329" endtime="20250218 15:36:46.329"/>
 </kw>
 <kw name="Should Be True" library="BuiltIn">
 <arg>${status}</arg>
 <arg>msg=Chroma Setup Incomplete.</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" starttime="20250218 11:11:39.608" endtime="20250218 11:11:39.608"/>
+<status status="PASS" starttime="20250218 15:36:46.329" endtime="20250218 15:36:46.329"/>
 </kw>
-<status status="PASS" starttime="20250218 11:11:39.608" endtime="20250218 11:11:39.608"/>
+<status status="PASS" starttime="20250218 15:36:46.329" endtime="20250218 15:36:46.329"/>
 </kw>
 <kw name="Take Pictures Using Webcam">
 <kw name="Run Process" library="Process">
 <arg>${BATCH_SCRIPT}</arg>
 <doc>Runs a process and waits for it to complete.</doc>
-<msg timestamp="20250218 11:11:39.608" level="INFO">Starting process:
+<msg timestamp="20250218 15:36:46.332" level="INFO">Starting process:
 video.bat</msg>
-<msg timestamp="20250218 11:11:39.622" level="INFO">Waiting for process to complete.</msg>
-<msg timestamp="20250218 11:11:56.032" level="INFO">Process completed.</msg>
-<status status="PASS" starttime="20250218 11:11:39.608" endtime="20250218 11:11:56.032"/>
+<msg timestamp="20250218 15:36:46.333" level="INFO">Waiting for process to complete.</msg>
+<msg timestamp="20250218 15:36:58.236" level="INFO">Process completed.</msg>
+<status status="PASS" starttime="20250218 15:36:46.332" endtime="20250218 15:36:58.236"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>8s</arg>
+<arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20250218 11:12:04.033" level="INFO">Slept 8 seconds</msg>
-<status status="PASS" starttime="20250218 11:11:56.032" endtime="20250218 11:12:04.033"/>
+<msg timestamp="20250218 15:37:03.236" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20250218 15:36:58.236" endtime="20250218 15:37:03.236"/>
 </kw>
-<status status="PASS" starttime="20250218 11:11:39.608" endtime="20250218 11:12:04.033"/>
+<status status="PASS" starttime="20250218 15:36:46.332" endtime="20250218 15:37:03.236"/>
 </kw>
-<kw name="Run AI">
-<doc>Perform inference</doc>
-<kw name="Predict Image">
-<var>${result}</var>
-<var>${confidence}</var>
-<arg>${IMAGE_PATH}</arg>
-<msg timestamp="20250218 11:12:04.038" level="FAIL">No keyword with name 'Predict Image' found.</msg>
-<status status="FAIL" starttime="20250218 11:12:04.038" endtime="20250218 11:12:04.038"/>
+<kw name="Predict From Directory">
+<kw name="Predict Directory" library="inferencer_lib">
+<msg timestamp="20250218 15:37:05.692" level="INFO">Model Loaded: vgg16_model.h5
+Reading Image:pictures/photo (2).jpg
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 131ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 131ms/step
+faulty---&gt;93.75%
+Reading Image:pictures/photo.jpg
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 41ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 41ms/step
+working---&gt;60.90%</msg>
+<status status="PASS" starttime="20250218 15:37:03.236" endtime="20250218 15:37:05.692"/>
 </kw>
-<status status="FAIL" starttime="20250218 11:12:04.033" endtime="20250218 11:12:04.038"/>
+<status status="PASS" starttime="20250218 15:37:03.236" endtime="20250218 15:37:05.692"/>
 </kw>
 <doc>Test image if classified correctly</doc>
-<status status="FAIL" starttime="20250218 11:11:38.122" endtime="20250218 11:12:04.038">No keyword with name 'Predict Image' found.</status>
+<status status="PASS" starttime="20250218 15:36:44.983" endtime="20250218 15:37:05.692"/>
 </test>
-<status status="FAIL" starttime="20250218 11:11:35.938" endtime="20250218 11:12:04.042"/>
+<status status="PASS" starttime="20250218 15:36:42.940" endtime="20250218 15:37:05.696"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Inferencer">Inferencer</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Inferencer">Inferencer</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20250218 11:11:38.121" level="WARN">Imported library 'c:\Users\Kira10\Documents\GitHub\Capstone-Revised\Robot\inferencer_lib.py' contains no keywords.</msg>
 </errors>
 </robot>

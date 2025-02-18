@@ -19,11 +19,10 @@ Check If Chroma Status Is Complete
 
 Take Pictures Using Webcam
     Run Process    ${BATCH_SCRIPT}
-    Sleep    8s
+    Sleep    5s
 
-Run AI
-    [Documentation]    Perform inference
-    ${result}    ${confidence}    Predict Image    ${IMAGE_PATH}    
+Predict From Directory
+    Predict Directory
 
 *** Test Cases ***
 Test Image Classification
@@ -31,4 +30,4 @@ Test Image Classification
     Set BlackWidow V4 Keyboard Chroma
     Check If Chroma Status Is Complete
     Take Pictures Using Webcam
-    Run AI
+    Predict From Directory

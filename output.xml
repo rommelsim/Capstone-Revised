@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.0 on win32)" generated="20250218 15:23:20.571" rpa="false" schemaversion="3">
+<suite id="s1" name="Inferencer" source="c:\Users\Kira10\Documents\GitHub\Capstone-Revised\Robot\inferencer.robot">
+<test id="s1-t1" name="Test Image Classification" line="28">
+<kw name="Set BlackWidow V4 Keyboard Chroma">
+<kw name="Perform Chroma Test BlackWidow V4" library="BlackWidow">
+<msg timestamp="20250218 15:23:22.882" level="INFO">SYNAPSE ATTACHED: FAIL</msg>
+<msg timestamp="20250218 15:23:22.883" level="FAIL">AttributeError: 'SynapseWebDriverClass' object has no attribute 'driver'</msg>
+<status status="FAIL" starttime="20250218 15:23:22.882" endtime="20250218 15:23:22.883"/>
+</kw>
+<status status="FAIL" starttime="20250218 15:23:22.881" endtime="20250218 15:23:22.883"/>
+</kw>
+<kw name="Check If Chroma Status Is Complete">
+<status status="NOT RUN" starttime="20250218 15:23:22.883" endtime="20250218 15:23:22.883"/>
+</kw>
+<kw name="Take Pictures Using Webcam">
+<status status="NOT RUN" starttime="20250218 15:23:22.887" endtime="20250218 15:23:22.887"/>
+</kw>
+<kw name="Predict From Directory">
+<status status="NOT RUN" starttime="20250218 15:23:22.887" endtime="20250218 15:23:22.887"/>
+</kw>
+<doc>Test image if classified correctly</doc>
+<status status="FAIL" starttime="20250218 15:23:22.818" endtime="20250218 15:23:22.887">AttributeError: 'SynapseWebDriverClass' object has no attribute 'driver'</status>
+</test>
+<status status="FAIL" starttime="20250218 15:23:20.574" endtime="20250218 15:23:22.887"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Inferencer">Inferencer</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
