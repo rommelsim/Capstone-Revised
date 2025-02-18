@@ -1,6 +1,7 @@
 from tensorflow.keras.preprocessing import image
 import tensorflow as tf
 import numpy as np
+from robot.api.deco import keyword
 
 class InferencerLibrary:
     def __init__(self, model_path="vgg16_model.h5"):
@@ -14,12 +15,14 @@ class InferencerLibrary:
             print(f"Error loading model: {e}")
             self.model = None
 
+    @keyword("Preprocess Image")
     def preprocess_img(self, img):
         img = image.load_img(img, target_size=(self.w, self.h))
         img_array = image.img_to_array(img)
         img_array = np.expand_dims(img_array, axis=0)
         return img_array
 
+    @keyword("Predict Image")
     def predict(self, img):
         if self.model is None:
             return "Error: Model not loaded", 0.0

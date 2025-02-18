@@ -1,0 +1,36 @@
+C:\Users\Kira10\Documents\GitHub\Razer-AutoCam\VideoAPI\x64\Debug\VideoAPI.pri
+C:\Users\Kira10\Documents\GitHub\Razer-AutoCam\VideoAPI\VideoAPI\x64\Debug\VideoAPI.vcxproj.AssemblyReference.cache
+C:\Users\Kira10\Documents\GitHub\Razer-AutoCam\VideoAPI\VideoAPI\x64\Debug\VideoAPI.vcxproj.Up2Date
+C:\Users\Kira10\Documents\GitHub\Razer-AutoCam\VideoAPI\VideoAPI\x64\Debug\priconfig.xml
+C:\Users\Kira10\Documents\GitHub\Razer-AutoCam\VideoAPI\VideoAPI\x64\Debug\priconfig.xml.intermediate
+C:\Users\Kira10\Documents\GitHub\Razer-AutoCam\VideoAPI\VideoAPI\x64\Debug\unfiltered.layout.resfiles
+C:\Users\Kira10\Documents\GitHub\Razer-AutoCam\VideoAPI\VideoAPI\x64\Debug\unfiltered.layout.resfiles.intermediate
+C:\Users\Kira10\Documents\GitHub\Razer-AutoCam\VideoAPI\VideoAPI\x64\Debug\filtered.layout.resfiles
+C:\Users\Kira10\Documents\GitHub\Razer-AutoCam\VideoAPI\VideoAPI\x64\Debug\filtered.layout.resfiles.intermediate
+C:\Users\Kira10\Documents\GitHub\Razer-AutoCam\VideoAPI\VideoAPI\x64\Debug\excluded.layout.resfiles
+C:\Users\Kira10\Documents\GitHub\Razer-AutoCam\VideoAPI\VideoAPI\x64\Debug\excluded.layout.resfiles.intermediate
+C:\Users\Kira10\Documents\GitHub\Razer-AutoCam\VideoAPI\VideoAPI\x64\Debug\resources.resfiles
+C:\Users\Kira10\Documents\GitHub\Razer-AutoCam\VideoAPI\VideoAPI\x64\Debug\resources.resfiles.intermediate
+C:\Users\Kira10\Documents\GitHub\Razer-AutoCam\VideoAPI\VideoAPI\x64\Debug\pri.resfiles
+C:\Users\Kira10\Documents\GitHub\Razer-AutoCam\VideoAPI\VideoAPI\x64\Debug\pri.resfiles.intermediate
+C:\Users\Kira10\Documents\GitHub\Razer-AutoCam\VideoAPI\VideoAPI\x64\Debug\qualifiers.txt
+C:\Users\Kira10\Documents\GitHub\Razer-AutoCam\VideoAPI\VideoAPI\x64\Debug\qualifiers.txt.intermediate
+C:\Users\Kira10\Documents\GitHub\Razer-AutoCam\VideoAPI\VideoAPI\x64\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\Kira10\Documents\GitHub\Capstone-Revised\Camera Driver\VideoAPI\x64\Debug\VideoAPI.pri
+C:\Users\Kira10\Documents\GitHub\Capstone-Revised\Camera Driver\VideoAPI\VideoAPI\x64\Debug\VideoAPI.vcxproj.AssemblyReference.cache
+C:\Users\Kira10\Documents\GitHub\Capstone-Revised\Camera Driver\VideoAPI\VideoAPI\x64\Debug\VideoAPI.vcxproj.Up2Date
+C:\Users\Kira10\Documents\GitHub\Capstone-Revised\Camera Driver\VideoAPI\VideoAPI\x64\Debug\priconfig.xml
+C:\Users\Kira10\Documents\GitHub\Capstone-Revised\Camera Driver\VideoAPI\VideoAPI\x64\Debug\priconfig.xml.intermediate
+C:\Users\Kira10\Documents\GitHub\Capstone-Revised\Camera Driver\VideoAPI\VideoAPI\x64\Debug\unfiltered.layout.resfiles
+C:\Users\Kira10\Documents\GitHub\Capstone-Revised\Camera Driver\VideoAPI\VideoAPI\x64\Debug\unfiltered.layout.resfiles.intermediate
+C:\Users\Kira10\Documents\GitHub\Capstone-Revised\Camera Driver\VideoAPI\VideoAPI\x64\Debug\filtered.layout.resfiles
+C:\Users\Kira10\Documents\GitHub\Capstone-Revised\Camera Driver\VideoAPI\VideoAPI\x64\Debug\filtered.layout.resfiles.intermediate
+C:\Users\Kira10\Documents\GitHub\Capstone-Revised\Camera Driver\VideoAPI\VideoAPI\x64\Debug\excluded.layout.resfiles
+C:\Users\Kira10\Documents\GitHub\Capstone-Revised\Camera Driver\VideoAPI\VideoAPI\x64\Debug\excluded.layout.resfiles.intermediate
+C:\Users\Kira10\Documents\GitHub\Capstone-Revised\Camera Driver\VideoAPI\VideoAPI\x64\Debug\resources.resfiles
+C:\Users\Kira10\Documents\GitHub\Capstone-Revised\Camera Driver\VideoAPI\VideoAPI\x64\Debug\resources.resfiles.intermediate
+C:\Users\Kira10\Documents\GitHub\Capstone-Revised\Camera Driver\VideoAPI\VideoAPI\x64\Debug\pri.resfiles
+C:\Users\Kira10\Documents\GitHub\Capstone-Revised\Camera Driver\VideoAPI\VideoAPI\x64\Debug\pri.resfiles.intermediate
+C:\Users\Kira10\Documents\GitHub\Capstone-Revised\Camera Driver\VideoAPI\VideoAPI\x64\Debug\qualifiers.txt
+C:\Users\Kira10\Documents\GitHub\Capstone-Revised\Camera Driver\VideoAPI\VideoAPI\x64\Debug\qualifiers.txt.intermediate
+C:\Users\Kira10\Documents\GitHub\Capstone-Revised\Camera Driver\VideoAPI\VideoAPI\x64\Debug\MultipleQualifiersPerDimensionFound.txt
