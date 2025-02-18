@@ -110,7 +110,9 @@ class System:
         self.render = RendererClass(self.inferencer)
         
 
-driver = System()
+if __name__ == "__main__":
+    driver = System()
+
 
 
 
