@@ -1,25 +1,25 @@
-pytest==7.2.2
-pytest-cov==5.0.0
-pytest-xdist==3.5.0
+# pytest==7.2.2
+# pytest-cov==5.0.0
+# pytest-xdist==3.5.0
 
-# TensorFlow
-tensorflow==2.18.0
-tensorflow-hub==0.16.1
-tensorflow_intel==2.18.0
-tensorboard==2.18.0
-tensorboard-data-server==0.7.2
-tensorflow-io-gcs-filesystem==0.31.0
+# # TensorFlow
+# tensorflow==2.18.0
+# tensorflow-hub==0.16.1
+# tensorflow_intel==2.18.0
+# tensorboard==2.18.0
+# tensorboard-data-server==0.7.2
+# tensorflow-io-gcs-filesystem==0.31.0
 
-# Robot Framework
-robotframework==6.0.2
-robotframework-assertion-engine==3.0.3
-robotframework-autoitlibrary==1.2.9
-robotframework-browser==19.1.2
-robotframework-playwright==0.1.0
-robotframework-pythonlibcore==4.4.1
-robotframework-seleniumlibrary==6.0.0
-robotframework-whitelibrary==1.6.0
+# # Robot Framework
+# robotframework==6.0.2
+# robotframework-assertion-engine==3.0.3
+# robotframework-autoitlibrary==1.2.9
+# robotframework-browser==19.1.2
+# robotframework-playwright==0.1.0
+# robotframework-pythonlibcore==4.4.1
+# robotframework-seleniumlibrary==6.0.0
+# robotframework-whitelibrary==1.6.0
 
-# Selenium
-selenium==4.28.1
-webdriver-manager==4.0.2
+# # Selenium
+# selenium==4.28.1
+# webdriver-manager==4.0.2
