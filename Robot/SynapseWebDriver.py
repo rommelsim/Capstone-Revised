@@ -40,8 +40,8 @@ class SynapseWebDriverClass:
             # Define driver...
             self.driver = webdriver.Chrome(service=self.service, options=self.options)
             print("SYNAPSE ATTACHED: PASS")
-        except:
-            print("SYNAPSE ATTACHED: FAIL")
+        except Exception as e:
+            print(f"Error: {e}")
     
     def getDriver(self)->WebDriver:
         return self.driver
