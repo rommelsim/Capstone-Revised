@@ -32,6 +32,15 @@ pipeline{
                 }
             }
         }
+		stage('Checking Dependencies Version...'){
+            steps{
+                script{
+                    bat """
+                        pip list
+                    """
+                }
+            }
+        }
         stage('Run Robot'){
             steps{
                 script{
