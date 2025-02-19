@@ -23,3 +23,5 @@
 # # Selenium
 # selenium==4.28.1
 # webdriver-manager==4.0.2
+
+pillow
