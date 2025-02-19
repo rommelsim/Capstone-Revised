@@ -32,10 +32,11 @@ pipeline{
                 }
             }
         }
-		stage('Checking Dependencies Version...'){
+        stage('Check Installed Dependencies'){
             steps{
                 script{
                     bat """
+                        call venv\\Scripts\\activate
                         pip list
                     """
                 }
