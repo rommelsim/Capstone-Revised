@@ -35,6 +35,7 @@ class SynapseWebDriverClass:
             self.options.add_experimental_option("debuggerAddress", "localhost:" + str(REMOTE_DEBUGGING_PORT))
 
             # Define service...
+            print(f"Chrome Executable: {CHROME_DRIVER_PATH}")
             self.service = Service(executable_path=CHROME_DRIVER_PATH)
 
             # Define driver...
