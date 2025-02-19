@@ -11,7 +11,7 @@ import time
 
 from robot.api.deco import keyword
 
-CHROME_DRIVER_PATH = r".\chromedriver.exe"
+CHROME_DRIVER_PATH = 'chromedriver.exe'
 REMOTE_DEBUGGING_PORT = 9229        # Synapse default port, don't modify.
 
 # Ensure that Synapse is running in the background before doing anything...
