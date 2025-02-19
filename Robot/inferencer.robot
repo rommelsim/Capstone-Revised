@@ -17,7 +17,7 @@ Check If Chroma Status Is Complete
     Should Be True    ${status}    msg=Chroma Setup Incomplete.
 
 Take Pictures Using Webcam
-    Run Process    ${BATCH_SCRIPT}
+    Run Process    cmd    /c    ${BATCH_SCRIPT}
     Sleep    5s
 
 Predict From Directory
