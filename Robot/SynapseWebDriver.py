@@ -8,10 +8,11 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import subprocess
 import time
-
+import os
 from robot.api.deco import keyword
 
-CHROME_DRIVER_PATH = 'chromedriver.exe'
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__)) 
+CHROME_DRIVER_PATH = os.path.join(CURRENT_DIR, "chromedriver.exe")
 REMOTE_DEBUGGING_PORT = 9229        # Synapse default port, don't modify.
 
 # Ensure that Synapse is running in the background before doing anything...
