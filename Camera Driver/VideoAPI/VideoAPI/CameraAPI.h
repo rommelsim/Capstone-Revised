@@ -21,6 +21,8 @@
 #include <winrt\Windows.Storage.h>
 #include <winrt\Windows.Storage.Streams.h>
 #include <filesystem>
+#include <fstream>
+
 using namespace winrt::Windows::Media::Devices;
 using namespace winrt;
 using namespace Windows::Media::Capture;
@@ -33,6 +35,30 @@ using namespace Windows::Storage;
 using namespace Windows::Graphics::Imaging;
 using namespace Windows::Media::Core;
 
+#include <mutex>  // For thread safety
+std::mutex logMutex;  // Ensure thread-safe logging
+void LogMessage(const std::wstring& message) {
+    std::lock_guard<std::mutex> lock(logMutex);  // Lock to prevent race conditions
+
+    std::wofstream logFile("log.txt", std::ios::app);  // Open log file in append mode
+    if (!logFile) {
+        std::wcerr << L"Failed to open log file!\n";
+        return;
+    }
+
+    // Get current time
+    time_t now = time(0);
+    struct tm timeInfo;
+    localtime_s(&timeInfo, &now);  // Safe version of localtime()
+
+    // Format time as [YYYY-MM-DD HH:MM:SS]
+    wchar_t timeBuffer[20];
+    wcsftime(timeBuffer, sizeof(timeBuffer) / sizeof(wchar_t), L"%Y-%m-%d %H:%M:%S", &timeInfo);
+
+    // Write log entry
+    logFile << L"[" << timeBuffer << L"] " << message << std::endl;
+    logFile.close();
+}
 
 namespace API {
     enum MODE {
@@ -250,10 +276,9 @@ namespace API {
         {
             try
             {
-                
-
                 if (!mediaCapture) {
                     std::wcerr << L"MediaCapture instance failed.";
+                    LogMessage(L"MediaCapture instance failed.");
                     throw_hresult(E_POINTER);
                 }
                 wchar_t buffer[MAX_PATH];
@@ -261,12 +286,13 @@ namespace API {
                 std::filesystem::path exePath(buffer);
                 auto currentDir = std::filesystem::current_path();
                 std::filesystem::path picturesPath = exePath.parent_path() / "pictures";
+                LogMessage(L"Picture Path: " + picturesPath.wstring());
 
                 // Create the "pictures" folder if it doesn't exist
                 if (!std::filesystem::exists(picturesPath))
                 {
                     std::filesystem::create_directory(picturesPath);
-                    std::wcout << "Creating path: " << picturesPath << "\n";
+                    LogMessage(L"Creating path: " + picturesPath.wstring());
                 }
                 auto picFileName = currentDir / "photo.jpg";
                 auto uniqueFileName = picFileName;
@@ -275,6 +301,7 @@ namespace API {
                     uniqueFileName = picturesPath / (L"Photo_" + std::to_wstring(count++) + L".jpg");
                 }
                 std::wcout << L"Photo taken file will be saved as: " << uniqueFileName.wstring() << "\n";
+                LogMessage(L"Photo taken file will be saved as: " + uniqueFileName.wstring() + L"\n");
 
                 auto imageProperties = ImageEncodingProperties::CreateJpeg();
 
@@ -283,6 +310,7 @@ namespace API {
                 mediaCapture.CapturePhotoToStorageFileAsync(imageProperties, storageFile).get();
 
                 std::wcout << L"Photo saved to: " << uniqueFileName.wstring() << "\n";
+                LogMessage(L"Photo saved to: " + uniqueFileName.wstring() + L"\n");
 
                 // Delay before capturing the next photo
                 std::this_thread::sleep_for(std::chrono::seconds(durationInSeconds));
@@ -293,11 +321,16 @@ namespace API {
                     << ex.message().c_str()
                     << L" (HRESULT: 0x"
                     << std::hex << ex.code() << L")\n";
+                //LogMessage(L"Failed to take photos: " + ex.message() + L" (HRESULT: 0x" + ex.code() + L")\n");
+                LogMessage(L"Failed to take photos: " + std::wstring(ex.message()) + L" (HRESULT: 0x" + std::to_wstring(ex.code().value) + L")");
                 throw;
             }
             catch (std::exception const& ex)
             {
                 std::cerr << "Standard exception caught: " << ex.what() << std::endl;
+                std::string errorMsg = "Standard exception caught: " + std::string(ex.what());
+                std::wstring wideErrorMsg(errorMsg.begin(), errorMsg.end());
+                LogMessage(wideErrorMsg);
                 throw;
             }
         }

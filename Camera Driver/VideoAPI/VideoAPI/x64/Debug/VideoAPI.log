@@ -1,4 +1,4 @@
 ﻿  main.cpp
-C:\Users\Kira10\Documents\GitHub\Capstone-Revised\Camera Driver\VideoAPI\VideoAPI\CameraAPI.h(85,26): warning C4129: 'W': unrecognized character escape sequence
-C:\Users\Kira10\Documents\GitHub\Capstone-Revised\Camera Driver\VideoAPI\VideoAPI\CameraAPI.h(87,26): warning C4129: 'C': unrecognized character escape sequence
+C:\Users\Kira10\Documents\GitHub\Capstone-Revised\Camera Driver\VideoAPI\VideoAPI\CameraAPI.h(111,26): warning C4129: 'W': unrecognized character escape sequence
+C:\Users\Kira10\Documents\GitHub\Capstone-Revised\Camera Driver\VideoAPI\VideoAPI\CameraAPI.h(113,26): warning C4129: 'C': unrecognized character escape sequence
   VideoAPI.vcxproj -> C:\Users\Kira10\Documents\GitHub\Capstone-Revised\Camera Driver\VideoAPI\x64\Debug\VideoAPI.exe

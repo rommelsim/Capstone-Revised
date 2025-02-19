@@ -2,3 +2,10 @@
 *.png
 /Camera Driver/VideoAPI/.vs
 *.obj
+*.log
+*.obj
+*.idb
+*.pdb
+*.ilk
+*.log
+*.tlog
