@@ -266,6 +266,7 @@ namespace API {
                 if (!std::filesystem::exists(picturesPath))
                 {
                     std::filesystem::create_directory(picturesPath);
+                    std::wcout << "Creating path: " << picturesPath << "\n";
                 }
                 auto picFileName = currentDir / "photo.jpg";
                 auto uniqueFileName = picFileName;
