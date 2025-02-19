@@ -7,6 +7,8 @@ Library      BlackWidow.py
 
 *** Variables ***
 ${BATCH_SCRIPT}      video.bat
+${MODEL_PATH}        vgg16_model.h5
+${IMAGE_PATH}        pictures
 
 *** Keywords ***
 Set BlackWidow V4 Keyboard Chroma 
@@ -21,7 +23,7 @@ Take Pictures Using Webcam
     Sleep    5s
 
 Predict From Directory
-    ${result}=    Predict Directory
+    ${result}=    Predict Directory    ${CURDIR}/${MODEL_PATH}    ${CURDIR}/${IMAGE_PATH}   
     Should Be Equal    ${result}    PASS
 
 *** Test Cases ***

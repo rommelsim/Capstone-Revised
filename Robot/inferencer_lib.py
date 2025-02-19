@@ -72,7 +72,7 @@ def Predict(model, img):
         model = None
 
 @keyword("Predict Directory")
-def PredictDirectory(model_path = MODEL, directory = DIRECTORY):
+def PredictDirectory(model_path, directory):
     try:
         model = LoadModel(model_path)
         for files in os.listdir(os.path.join(directory)):
@@ -90,5 +90,5 @@ def PredictDirectory(model_path = MODEL, directory = DIRECTORY):
 
        
     
-if __name__ == "__main__":
-    PredictDirectory(MODEL, DIRECTORY)
+# if __name__ == "__main__":
+#     PredictDirectory(MODEL, DIRECTORY)
