@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import filedialog
 from tkinter import ttk
 from PIL import Image, ImageTk
-
+import customtkinter as ctk
 import tensorflow as tf
 import numpy as np
 import argparse
@@ -71,8 +71,8 @@ class RendererClass:
         self.frame = Frame(self.root, bg="#0C0C0C")
         self.frame.pack(fill="both", expand=True, pady=10)
 
-        self.load_img_btn = Button(self.frame, text="Load Image", command=self.open_img, fg="#0C0C0C", bg="#44FF44", 
-                                   font=("Arial", 12, "bold"), relief=FLAT, width=15, height=2, activebackground="#66FF66")
+        self.load_img_btn = ctk.CTkButton(self.frame, text="Load Image", command=self.open_img, fg_color="#44FF44",
+                                          text_color="black", font=("Arial", 12, "bold"), corner_radius=15, width=150, height=40)
         self.load_img_btn.pack(pady=10)
 
         self.image_label = Label(self.frame, bg="#0C0C0C")
@@ -81,8 +81,8 @@ class RendererClass:
         self.result_label = Label(self.frame, text="", fg="#44FF44", bg="#0C0C0C", font=("Arial", 14, "bold"))
         self.result_label.pack(pady=10)
         
-        self.quit_btn = Button(self.frame, text="Quit", command=self.root.destroy, fg="#0C0C0C", bg="#44FF44", 
-                               font=("Arial", 12, "bold"), relief=FLAT, width=15, height=2, activebackground="#66FF66")
+        self.quit_btn = ctk.CTkButton(self.frame, text="Quit", command=self.root.destroy, fg_color="#44FF44",
+                                      text_color="black", font=("Arial", 12, "bold"), corner_radius=15, width=150, height=40)
         self.quit_btn.pack(pady=10)
 
         self.img_tk = None

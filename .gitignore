@@ -1,6 +1,6 @@
-*.jpg
-*.png
 /Camera Driver/VideoAPI/.vs
+/images
+/test
 *.obj
 *.log
 *.obj
@@ -9,3 +9,4 @@
 *.ilk
 *.log
 *.tlog
+/Camera Driver/VideoAPI/packages/Microsoft.WindowsAppSDK.1.6.250205002
