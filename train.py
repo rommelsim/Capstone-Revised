@@ -66,29 +66,29 @@ train_ds = train_ds.map(lambda x, y: (data_augmentation(x, training=True), y))
 # 2) MaxPooling2D((2, 2)): Pooling Layer. Downsamples feature map. 
 # 3) Dense(512, activation='relu'): Fully Connected Layer. Feature map flattened to 1D vector, used for predictions.
 
-# model = models.Sequential([
-#     layers.Conv2D(64, (3, 3), activation='relu', input_shape=(img_w, img_h, 3)), 
-#     layers.BatchNormalization(),
-#     layers.MaxPooling2D((2, 2)),    
+model = models.Sequential([
+    layers.Conv2D(64, (3, 3), activation='relu', input_shape=(img_w, img_h, 3)), 
+    layers.BatchNormalization(),
+    layers.MaxPooling2D((2, 2)),    
 
-#     layers.Conv2D(128, (3, 3), activation='relu'),
-#     layers.BatchNormalization(),
-#     layers.MaxPooling2D((2, 2)),
+    layers.Conv2D(128, (3, 3), activation='relu'),
+    layers.BatchNormalization(),
+    layers.MaxPooling2D((2, 2)),
 
-#     layers.Conv2D(256, (3, 3), activation='relu'),
-#     layers.BatchNormalization(),
-#     layers.MaxPooling2D((2, 2)),
+    layers.Conv2D(256, (3, 3), activation='relu'),
+    layers.BatchNormalization(),
+    layers.MaxPooling2D((2, 2)),
 
-#     layers.Conv2D(512, (3, 3), activation='relu'),
-#     layers.BatchNormalization(),
-#     layers.MaxPooling2D((2, 2)),
+    layers.Conv2D(512, (3, 3), activation='relu'),
+    layers.BatchNormalization(),
+    layers.MaxPooling2D((2, 2)),
 
-#     # layers.GlobalAveragePooling2D(),
-#     layers.Flatten(),
-#     layers.Dense(512, activation='relu'),      
-#     layers.Dropout(0.5),
-#     layers.Dense(1, activation='sigmoid')
-# ])
+    # layers.GlobalAveragePooling2D(),
+    layers.Flatten(),
+    layers.Dense(512, activation='relu'),      
+    layers.Dropout(0.5),
+    layers.Dense(1, activation='sigmoid')
+])
 ####################################################
 
 
@@ -111,15 +111,15 @@ train_ds = train_ds.map(lambda x, y: (data_augmentation(x, training=True), y))
 
 ####################################################
 # Transfer learning
-base_model = VGG16(weights='imagenet', include_top=False, input_shape=(img_w, img_h, 3))
-base_model.trainable = False
-model = models.Sequential([
-    base_model,  
-    layers.GlobalAveragePooling2D(),  
-    layers.Dense(512, activation='relu'), 
-    layers.Dropout(0.5),  
-    layers.Dense(1, activation='sigmoid') 
-])
+# base_model = VGG16(weights='imagenet', include_top=False, input_shape=(img_w, img_h, 3))
+# base_model.trainable = False
+# model = models.Sequential([
+#     base_model,  
+#     layers.GlobalAveragePooling2D(),  
+#     layers.Dense(512, activation='relu'), 
+#     layers.Dropout(0.5),  
+#     layers.Dense(1, activation='sigmoid') 
+# ])
 
 ####################################################
 model.compile(
@@ -160,10 +160,10 @@ history = model.fit(
     validation_data=val_ds,
     epochs=epochs,
     class_weight=class_weight_dict,
-    callbacks=[early_stopping]
+    # callbacks=[early_stopping]
 )
 
-model.save('vgg16_model.h5')
+model.save('model.h5')
 
 restored_model = tf.keras.models.load_model('vgg16_model.h5')
 print(restored_model.summary())
